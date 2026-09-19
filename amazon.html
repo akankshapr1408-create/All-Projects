@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #e3e6e6;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #131921;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+}
+
+.search-bar {
+    display: flex;
+    width: 50%;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    border: none;
+    background: orange;
+    cursor: pointer;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=1200')
+    center/cover no-repeat;
+    height: 300px;
+    color: white;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Products */
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.product-card {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-card h3 {
+    margin: 10px 0;
+}
+
+.product-card p {
+    color: green;
+    font-weight: bold;
+}
+
+.product-card button {
+    background: #ffd814;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+/* Footer */
+footer {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+    </style>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">amazon</div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search Amazon">
+            <button>Search</button>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Account</a>
+            <a href="#">Orders</a>
+            <a href="#">Cart 🛒</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Welcome to Amazon</h1>
+        <p>Shop millions of products at great prices.</p>
+    </section>
+
+    <!-- Products -->
+    <section class="products">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product">
+            <h3>Smartphone</h3>
+            <p>₹19,999</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product">
+            <h3>Laptop</h3>
+            <p>₹49,999</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product">
+            <h3>Headphones</h3>
+            <p>₹1,999</p>
+            <button>Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/200" alt="Product">
+            <h3>Smart Watch</h3>
+            <p>₹2,999</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Amazon Clone. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

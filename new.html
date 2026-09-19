@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NetBinge</title>
+
+<style>
+/* =====================
+   BASIC RESET
+===================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* =====================
+   NAVBAR
+===================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111;
+    padding: 15px 30px;
+    position: relative;
+}
+
+/* Custom Logo */
+.logo {
+    color: red;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-links a:hover {
+    color: red;
+}
+
+/* Hamburger */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+/* =====================
+   HERO SECTION
+===================== */
+.hero {
+    height: 60vh;
+    background: linear-gradient(to top, black, transparent),
+    url("https://wallpapercave.com/wp/wp4056410.jpg");
+    background-size: cover;
+    padding: 60px;
+}
+
+.hero h1 {
+    font-size: 40px;
+}
+
+.hero p {
+    font-size: 18px;
+}
+
+/* =====================
+   ROW SECTIONS
+===================== */
+.row {
+    padding: 20px 30px;
+}
+
+.row h2 {
+    margin-bottom: 10px;
+}
+
+/* Horizontal Scroll */
+.row-posters {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+}
+
+.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+/* Poster */
+.poster {
+    position: relative;
+    min-width: 160px;
+}
+
+.poster img {
+    width: 160px;
+    border-radius: 5px;
+}
+
+/* Hover Text */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 8px;
+    font-size: 14px;
+    opacity: 0;
+}
+
+.poster:hover .overlay {
+    opacity: 1;
+}
+
+/* =====================
+   LOGIN SECTION
+===================== */
+
+}.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-box {
+    background-color: #111;
+    padding: 30px;
+    width: 300px;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+}
+
+.login-box input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.login-box button {
+    width: 100%;
+    padding: 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    cursor: pointer;}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 600px) {
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #111;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 12px;
+        border-top: 1px solid #222;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================
+     NAVBAR
+===================== -->
+<header class="navbar">
+    <div class="logo">NetBinge</div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">☰</label>
+
+    <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#login">Login</a>
+    </nav>
+</header>
+
+<!-- =====================
+     HERO
+===================== -->
+<section class="hero" id="home">
+    <h1>Unlimited Movies & Series</h1>
+    <p>Binge smarter with NetBinge</p>
+</section>
+
+<!-- =====================
+     SCROLLING ROWS
+===================== -->
+<section class="row" id="movies">
+    <h2>Popular on NetBinge</h2>
+    <div class="row-posters">
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/qJ2tW6WMUDux911r6m7haRef0WH.jpg">
+            <div class="overlay">Inception</div>
+        </div>
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/b6IRp6Pl2Fsq37r9jFhGoLtaqHm.jpg">
+            <div class="overlay">Interstellar</div>
+        </div>
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg">
+            <div class="overlay">Avengers</div>
+        </div>
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/uKvVjHNqB5VmOrdxqAt2F7J78ED.jpg">
+            <div class="overlay">Dark</div>
+        </div>
+    </div>
+</section>
+
+<section class="row">
+    <h2>Trending Now</h2>
+    <div class="row-posters">
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/34nDCQZwaEvsy4CFO5hkGRFDCVU.jpg">
+            <div class="overlay">Stranger Things</div>
+        </div>
+        <div class="poster">
+            <img src="https://image.tmdb.org/t/p/w300/9O1Iy9od7r4kWJfN7g2t9xZQZ3G.jpg">
+            <div class="overlay">Money Heist</div>
+        </div>
+    </div>
+</section>
+
+<!-- =====================
+     LOGIN PAGE
+===================== -->
+<section class="login" id="login">
+    <div class="login-box">
+        <h2>Sign In</h2>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button>Login</button>
+    </div>
+</section>
+
+</body>
+</html>
