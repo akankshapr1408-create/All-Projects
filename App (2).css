@@ -1,0 +1,9 @@
+*{box-sizing:border-box}body{font-family:Arial;background:#f4f7fc}
+.container{max-width:900px;margin:30px auto}
+.stats,.task-card{background:#fff;padding:15px;border-radius:10px;margin:10px 0}
+.form{display:flex;gap:10px}.form input{flex:1;padding:10px}
+.form button,.done-btn,.delete-btn{padding:10px;border:none;color:white;border-radius:5px}
+.form button{background:#007bff}.done-btn{background:green}.delete-btn{background:red}
+.progress-bar{height:20px;background:#ddd;border-radius:20px;overflow:hidden}
+.progress{height:100%;background:green}.completed{text-decoration:line-through;color:gray}
+.task-card{display:flex;justify-content:space-between}

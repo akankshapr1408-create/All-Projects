@@ -1,0 +1,68 @@
+import React, { useState, useEffect } from "react";
+
+function App() {
+  const [subject, setSubject] = useState("");
+  const [task, setTask] = useState("");
+  const [tasks, setTasks] = useState([]);
+
+  useEffect(() => {
+    const stored = JSON.parse(localStorage.getItem("tasks"));
+    if (stored) setTasks(stored);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  const addTask = () => {
+    if (!subject || !task) return alert("Fill all fields");
+    setTasks([...tasks, { id: Date.now(), subject, task, completed: false }]);
+    setSubject("");
+    setTask("");
+  };
+
+  const toggleTask = (id) => {
+    setTasks(tasks.map(t => t.id === id ? {...t, completed: !t.completed} : t));
+  };
+
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(t => t.id !== id));
+  };
+
+  const completed = tasks.filter(t => t.completed).length;
+  const progress = tasks.length ? Math.round((completed/tasks.length)*100) : 0;
+
+  return (
+    <div className="container">
+      <h1>📚 Smart Study Planner</h1>
+      <div className="stats">
+        <div>Total: {tasks.length}</div>
+        <div>Completed: {completed}</div>
+        <div>Progress: {progress}%</div>
+      </div>
+
+      <div className="form">
+        <input value={subject} onChange={e=>setSubject(e.target.value)} placeholder="Subject" />
+        <input value={task} onChange={e=>setTask(e.target.value)} placeholder="Task" />
+        <button onClick={addTask}>Add</button>
+      </div>
+
+      <div className="progress-bar"><div className="progress" style={{width: `${progress}%`}}></div></div>
+
+      {tasks.map(t => (
+        <div className="task-card" key={t.id}>
+          <div>
+            <h3>{t.subject}</h3>
+            <p className={t.completed ? "completed" : ""}>{t.task}</p>
+          </div>
+          <div>
+            <button className="done-btn" onClick={()=>toggleTask(t.id)}>Done</button>
+            <button className="delete-btn" onClick={()=>deleteTask(t.id)}>Delete</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
